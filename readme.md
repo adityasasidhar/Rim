@@ -168,11 +168,11 @@ LLaMA models require a license and authentication tokens to be downloaded and us
 ```plaintext
 .
 ├── main.py                 # Entry point for starting the Flask app
-├── inference_model.py      # Contains intent detection and model-switching logic
 ├── templates/              # HTML templates for the web app
 │   └── index.html          # Homepage UI
 ├── static/                 
-│   └── images/             # Folder to store generated images
+│   └── css/
+        └── styles.css      # the style of the Homepage UI
 ├── requirements.txt        # List of dependencies
 ├── README.md               # Project documentation
 └── models/                 # Folder to download/store pre-trained models
