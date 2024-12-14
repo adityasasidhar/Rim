@@ -71,6 +71,48 @@ Ensure you have the following installed on your machine:
 
 ---
 
+## AI Assistant
+
+### Using Hugging Face for LLaMA Models
+
+LLaMA models require a license and authentication tokens to be downloaded and used. Follow these steps:
+
+1. **Obtain a License**:
+   - Visit the official [Meta AI LLaMA](https://ai.meta.com/resources/llama-downloads/) page to request access and agree to their licensing terms.
+
+2. **Set Up Hugging Face Authentication**:
+   - Create a Hugging Face account at [Hugging Face](https://huggingface.co/), if you don't have one.
+   - Generate an access token from [Hugging Face Tokens](https://huggingface.co/settings/tokens).
+   - Ensure that the token has the necessary scopes for accessing the LLaMA models.
+
+3. **Download Models with Hugging Face**:
+   Use the `transformers` library to download the LLaMA models. Example:
+
+   ```bash
+   pip install transformers
+   ```
+
+   Authenticate Hugging Face CLI:
+   ```bash
+   huggingface-cli login
+   ```
+
+   Download and save the models:
+   ```python
+   from transformers import AutoModel
+   model_name = "meta-llama/LLaMA-3.2-1B-Instruct"  # Replace with your model
+   model = AutoModel.from_pretrained(model_name, use_auth_token=True)
+   model.save_pretrained("./models/llama-1b-instruct")
+   ```
+
+4. **Organize Models in the Directory**:
+   Place downloaded models in the `./models/` folder under an organized structure, such as:
+   ```plaintext
+   models/
+   └── llama-1b-instruct/
+   ```
+---
+
 ### Running Rim
 
 1. **Start the Flask Application**
